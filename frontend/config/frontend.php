@@ -250,10 +250,10 @@ return array(
 				'http://<city>.milimon.dev/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
 				'http://<city>.milimon.dev/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 				// default rules
-				'http://<city>.new.sushiport.ru/<controller:\w+>/<id:\d+>' => '<controller>/index',
-				'http://<city>.new.sushiport.ru/<controller:\w+>' => '<controller>/index',
-				'http://<city>.new.sushiport.ru/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-				'http://<city>.new.sushiport.ru/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+				'http://new.<city>.sushiport.ru/<controller:\w+>/<id:\d+>' => '<controller>/index',
+				'http://new.<city>.sushiport.ru/<controller:\w+>' => '<controller>/index',
+				'http://new.<city>.sushiport.ru/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+				'http://new.<city>.sushiport.ru/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 			),
 		),
 		'user' => array(

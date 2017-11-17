@@ -84,7 +84,7 @@
 					<ul class="change-city-list">
 						<?
 							foreach ($this->variables['citysFull'] as $city) {
-								echo '<li><a href="http://' . $city->alias . '.new.sushiport.ru">' . $city->name . '</a></li>';
+								echo '<li><a href="http://new.' . $city->alias . '.sushiport.ru">' . $city->name . '</a></li>';
 							}
 						?>
 
