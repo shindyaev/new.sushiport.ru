@@ -34,17 +34,16 @@ return array(
 		'php.defaultCharset' => 'utf-8',
 		'php.timezone'       => 'Europe/Samara',
 		'smtp' => array(
-				"host" => "ssl://smtp.yandex.ru", //smtp сервер
-				"debug" => 1, //отображение информации дебаггера (0 - нет вообще)
+				"host" => "smtp.volga-rmz.ru", //smtp сервер
+				"debug" => 0, //отображение информации дебаггера (0 - нет вообще)
 				"auth" => true, //сервер требует авторизации
-				"port" => 465, //порт (по-умолчанию - 25)
-				'SMTPSecure' => 'ssl',
-				"username" => "noreply@milimon.ru", //имя пользователя на сервере
-				"password" => "1a2xh7m",//"mqfnignqujcgjhnf", //пароль
-				"addreply" => "noreply@milimon.ru", //ваш е-mail
+				"port" => 25, //порт (по-умолчанию - 25)
+				"username" => "service@volga-rmz.ru", //имя пользователя на сервере
+				"password" => "IHWsK5WYT8", //пароль
+				"addreply" => "service@milimon.ru", //ваш е-mail
 				"replyto" => "", //e-mail ответа
-				"fromname" => "Milimon.ru – система доставки вашей любимой еды", //имя
-				"from" => "noreply@milimon.ru", //от кого
+				"fromname" => "Milimon.ru - система доставки вашей любимой еды", //имя
+				"from" => "service@milimon.ru", //от кого
 				"charset" => "utf-8", //от кого
 		),
 		'site' => 'smr.milimon.ru.',

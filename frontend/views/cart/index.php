@@ -86,8 +86,8 @@
 					<a href="javascript: void(0);"><img src="/img/uppd-refresh.png"></a>
 				</div>
 				<div class="cart-order-button-block-note gray-text">Уточните стоимость доставки <br>до вашего дома у оператора</div>
-				<div class="cart-order-button-block-normal-order-button" id="cart-order-button-block-normal-order-button" data-toggle="modal" data-target="#normal-order-modal"></div>
-				<div class="cart-order-button-block-smart-order-button" id="cart-order-button-block-smart-order-button" data-toggle="modal" data-target="#smart-order-modal">Заберу сам</div>
+				<div class="cart-order-button-block-normal-order-button" id="cart-order-button-block-normal-order-button" onclick="yaCounter26860266.reachGoal('cart-order-button-block-normal-order-button'); return true;" data-toggle="modal" data-target="#normal-order-modal"></div>
+				<div class="cart-order-button-block-smart-order-button" id="cart-order-button-block-smart-order-button" onclick="yaCounter26860266.reachGoal('cart-order-button-block-smart-order-button'); return true;" data-toggle="modal" data-target="#smart-order-modal">Заберу сам</div>
 			</div>
 		
 		</div>
@@ -139,9 +139,6 @@
 			</div>
 			
 			<div class="cart-smart-order-form-order-button" id="submit-order"></div>
-			<p style="padding: 10px 0;width: 230px; display: block;font-size: 9px;margin: 0 auto; color: #fff;">
-				 Нажимая «Заказать», я&nbsp;даю согласие на&nbsp;обработку моих персональных данных и&nbsp;получение рекламных предложений. С&nbsp;<a href="http://smr.milimon.ru/pages/33/" target="_blank" style="color: #F5FC13;">условиями обработки персональных данных и&nbsp;получения предложений</a> - ознакомлен и&nbsp;согласен.
-			</p>
 			
 		</div>
       	
@@ -323,9 +320,6 @@
 				</div>
 				<div class="cart-order-button-block-note gray-text">Уточните стоимость доставки <br>до вашего дома у оператора</div>
 				<div class="normal-order-modal-order-button  normal-order-form-submit"></div>
-				<p style="padding: 10px 0;width: 190px; display: block;font-size: 10px;margin: 0 auto;">
-					 Нажимая «Заказать», я&nbsp;даю согласие на&nbsp;обработку моих персональных данных и&nbsp;получение рекламных предложений. С&nbsp;<a href="http://smr.milimon.ru/pages/33/" target="_blank">условиями обработки персональных данных и&nbsp;получения предложений</a> - ознакомлен и&nbsp;согласен.
-				</p>
 			</div>
       	</div>
       	<div class="clearfix"></div>
@@ -386,7 +380,6 @@
 
 
 		$("#submit-order").click(function() {
-			console.log ('Нажатие');
 			var data = new Object;
 			data['order'] = new Object;
 			var tm;
@@ -440,7 +433,7 @@
 					$("#success-order-modal").modal('show');
 					cart.removeAllGoods();
 					
-					//yaCounter26860266.reachGoal('submit-order');
+					yaCounter26860266.reachGoal('submit-order');
 					
 				},
 			})
@@ -449,7 +442,7 @@
 
 
 		$(".normal-order-form-submit").click(function() {
-			console.log('Клик');
+
 			var data = new Object;
 			data['order'] = new Object;
 			var tm;

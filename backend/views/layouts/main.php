@@ -50,14 +50,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					</li>
 				</ul>
 				
-<!-- 				
-				<ul class="nav pull-right">
+					<ul class="nav pull-right">
 					<li class="change-city-label">
 						Город: 	
 					</li>
 					<li class="dropdown user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-						<span class="username"><?php echo $this->variables['city']?></span>
+							<span class="username"><?php echo $this->variables['city']?></span>
 						<i class="icon-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu">
@@ -67,7 +66,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</ul>
 					</li>					
 				</ul>
- -->				
+
 				
 				
 			</div>

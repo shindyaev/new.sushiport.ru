@@ -78,7 +78,7 @@ class Restoran extends EActiveRecord
 			'map' => 'Карта',
 			'map2' => 'Карта 2',
 			'service' => 'Услуги',
-			'cityId' => 'City',
+			'cityId' => 'Город',
 			'workTime' => 'Время работы',
 			'text' => 'Текст',
 			'site' => 'Сайт',

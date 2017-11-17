@@ -42,10 +42,6 @@
 					<label for="exampleInputEmail1">Текст сообщения</label>
 					<textarea resize='false' class="form-control" id="review-text"></textarea>
 				</div>
-				<div class="form-group hidden">
-					<label for="validate">Антиспам</label>
-					<input class="form-control" id="validate">
-				</div>
 			</div>
 			
 			<a href="javascript:void(0)" id="write-review-link">Оставить отзыв</a>
@@ -112,7 +108,6 @@
 			data['review']['name'] = $("#review-name").val();
 			data['review']['email'] = $("#review-email").val();
 			data['review']['text'] = $("#review-text").val();
-			data['validate'] = $("#validate").val();
 
 			if (data['review']['name'] == '') {
 				Alert('Необходимо указать имя!');
@@ -123,28 +118,21 @@
 				Alert('Необходимо указать текст сообщения!');
 				return;
 			}
-			
-			if (data['validate'] != '') {
-				Alert('Спам не пройдет!');
-				return;
-			}
-			else {
-				$.ajax({
-					cache 		: false,
-					type 		: 	'POST',
-					url			:	'/review/submit/',
-					data		:	data,
-					dataType	:	'json',
-					success		:	function(response) {
-						Alert("Ваша отзыв отправлен!");
-						$("#review-name").val("");
-						$("#review-email").val("");
-						$("#review-text").val("");
-						$("#review-form").slideUp();
-					},
-				})
-			}
-			
+
+			$.ajax({
+				cache 		: false,
+				type 		: 	'POST',
+				url			:	'/review/submit/',
+				data		:	data,
+				dataType	:	'json',
+				success		:	function(response) {
+					Alert("Ваша отзыв отправлен!");
+					$("#review-name").val("");
+					$("#review-email").val("");
+					$("#review-text").val("");
+					$("#review-form").slideUp();
+				},
+			})
 		};
 
 		$("#write-review-link").click(function() {

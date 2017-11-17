@@ -2,14 +2,7 @@
 		
 	<div class="team-contain">
 		<div class="main-h2 lh-40">
-			Каждый день 198 сотрудников и единомышленников делают то, что умеют лучше других.
-		</div>
-		
-		<div class="">
-			<div class="">
-				<div class="cart-smart-order-form-line"></div>
-				<div class="cart-smart-order-form-order-button" id="submitTest"></div>
-			</div>
+			Каждый день 198 сотрудников и единомышленников GEDZA делают то, что умеют лучше других.
 		</div>
 		
 		<div class="fs-14 text-center mt-30">
@@ -44,6 +37,7 @@
 	</div>
 	
 	<div class="clearfix mt-30"></div>
+	
 	<div class="team-slider mt-30">
 		<ul>
 			<?php foreach ($images AS $key => $val):?>
@@ -59,11 +53,13 @@
 		<div class="team-slider-left-arrow"></div>
 		<div class="team-slider-right-arrow"></div>
 	</div>
+	
 	<br><br><br><br>
 	
 </div><!-- .content-->
 
 <script type="text/javascript">
+
 
 $(document).ready(function() {
 	$(".team-slider-left-arrow").click(function() {
@@ -98,26 +94,6 @@ $(document).ready(function() {
 	}
 	
  	setInterval(slideShow, 5000);
- 	
- 	//Отправка тестового письма
- 	$("#submitTest").click(function() {
- 		console.log ('Нажатие');
- 		var data = new Object;
- 		data['test'] = new Object;
- 		
- 		data['test']['email'] = 'email';
- 		
- 		$.ajax({
- 			cache 		: false,
- 			type 		: 	'POST',
- 			url			:	'/team/Submit/',
- 			data		:	data,
- 			dataType	:	'json',
- 			success		:	function(response) {
- 				alert('Письмо отправлено');
- 			},
- 		})
- 	})
 	
 })
 

@@ -139,8 +139,7 @@
 				<a href="<?php echo $this->createCPUUrl("/action/")?>" >Акции</a>,
 				<a href="<?php echo $this->createCPUUrl("/restaurants/")?>" >Адреса ресторанов</a>
 				<br>
-				<a target="_blank" href="http://www.milimon-family.ru">Перейти на сайт www.milimon-family.ru</a><br />
-				<a target="_blank" href="http://smr.milimon.ru/pages/33/">Политика конфиденциальности</a><br><br>
+				<a target="_blank" href="http://www.milimon-family.ru">Перейти на сайт www.milimon-family.ru</a><br><br>
 				
 			<br></div>
 			
@@ -172,20 +171,6 @@
 	</div>
 </div>
 
-<div class="modal fade bs-example-modal-sm" id="Info-Message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-sm" style="width: 50%;">
-		<div class="modal-content">
-			<div class="modal-body" id="Info-modal-content" style="padding: 10px;background-color: rgb(255, 246, 204);">
-			Уважаемые клиенты. Обращаем ваше&nbsp;внимание, что по&nbsp;техническим причинам 17&nbsp;октября до 17:00 заказы на доствку будут приниматься только по телефону.	Спасибо за&nbsp;понимание.
-			</div>
-		</div>
-	</div>
-</div>
-<script>
-	$('#Info-Message-modal').modal('hide');
-</script>
-
-
 <div class="modal fade bs-example-modal-sm" id="Alert-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -201,6 +186,37 @@
   </div>
 </div>
 
+<div class="modal fade bs-example-modal-sm" id="call-me-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body" id="call-me-modal-content">
+      	
+      	<div data-dismiss="modal" class="popur-close"><span aria-hidden="true"></span></div>
+      	
+      	<div class="call-me-header">Заказать звонок</div>
+      	
+      	<form class="form-horizontal" id="callme-form" action="/site/callMe/" method="post">			
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Имя</label>
+			    <div class="col-sm-10">
+			      <input placeholder="Сергей" class="form-control" name="CallMe[name]" id="CallMe_name" type="text" />			      <div class="errorMessage" id="CallMe_name_em_" style="display:none"></div>			    </div>
+			</div>
+			
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Телефон</label>
+				<div class="col-sm-10">
+					<input placeholder="+7 (846) 123-34-56" class="form-control" name="CallMe[phone]" id="CallMe_phone" type="text" />					<div class="errorMessage" id="CallMe_phone_em_" style="display:none"></div>				</div>
+			</div>
+			
+			<button class="btn btn-default" type="submit" name="yt1">Перезвоните мне</button>			
+			</form>      	
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="dish-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

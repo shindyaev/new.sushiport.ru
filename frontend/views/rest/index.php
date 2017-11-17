@@ -20,7 +20,9 @@
 			//echo '00';
 		}
 	?>
-	<?php foreach ($restorans AS $key => $val):?>
+	<?php
+	if (count($restorans) > 0) {
+	foreach ($restorans AS $key => $val):?>
 	<div class="rest-list-item">
 
 			<a href="<?php echo $this->createCPUUrl("/menu/".$val->menu."/")?>">
@@ -64,7 +66,8 @@
 		</div>
 	</div>
 	<?php endforeach;?>
-	
+
+	<?} else echo 'По данному запросу ресторанов не найдено';?>
 	<div class="milimon-h3 mt-30">Доставка еды на дом и офис</div>
 	<div class="milimon-text mt-10 seo-text">
 		<?php echo $this->variables['restoransText'];?>

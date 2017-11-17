@@ -6,6 +6,11 @@
  * The followings are the available columns in table 'citys':
  * @property integer $id
  * @property string $name
+ * @property string $alias
+ * @property string $nameR
+ * @property string $nameD
+ * @property string $phone
+ * @property string $email
  */
 class City extends EActiveRecord
 {
@@ -26,10 +31,10 @@ class City extends EActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>32),
+			array('name, alias, nameR, nameD, phone, email', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, name, alias, nameR, nameD, phone, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,7 +56,12 @@ class City extends EActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'name' => 'Наименование города',
+			'alias' => 'Alias для поддомена',
+			'nameR' => 'Имя в род. падеже',
+			'nameD' => 'Имя в дат. падеже',
+			'phone' => 'Телефон',
+			'email' => 'Email',
 		);
 	}
 
@@ -75,6 +85,11 @@ class City extends EActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('alias',$this->alias,true);
+		$criteria->compare('nameR',$this->nameR,true);
+		$criteria->compare('nameD',$this->nameD,true);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('email',$this->email,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

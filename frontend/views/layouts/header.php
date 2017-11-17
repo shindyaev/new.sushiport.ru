@@ -69,7 +69,6 @@
 <body>
 	<div class="wrapper">
 	<?php if (empty($this->variables['incart'])):?>
-	
 	<div class="header-text-line">
 		<div id="header-fixed-top">
 			<a target="_blank" href="http://www.milimon-family.ru/" class="top-milimon-family">MILIMON<br>FAMILY</a>
@@ -77,6 +76,24 @@
 			<div class="top-phone-block">
 				<div class="top-phone-block-header">200-02-20</div>
 				<div class="top-phone-block-footer">Закажите по телефону</div>
+			</div>
+
+			<div class="city-head-menu" style="float: left; margin-left: 30px; background: #eeeff1;">
+				<div class="city-change-city-head-menu mr-20">
+					<a><?php echo $this->variables['city']?></a>
+					<ul class="change-city-list">
+						<?
+							foreach ($this->variables['citysFull'] as $city) {
+								echo '<li><a href="http://' . $city->alias . '.milimon.dev">' . $city->name . '</a></li>';
+							}
+						?>
+
+						<?/*php foreach ($this->variables['citys'] AS $key => $val):?>
+							<li><a href="/site/changeCity/<?php echo $key;?>/"><?php echo $val?></a></li>
+						<?php endforeach;*/?>
+
+					</ul>
+				</div>
 			</div>
 
 			<a href="<?php echo $this->createCPUUrl('/cart/')?>" class="header-text-line-go-to-cart" data-bind="css: cartClass">
@@ -107,7 +124,7 @@
 				<img src="/img/logo.png">
 			</a>
 		<?php endif;?>
-		
+
 		<div class="header-lk-block">
 			<?php if (Yii::app()->user->isGuest) :?>
 				<a href="<?php echo $this->createCPUUrl('/user/login/');?>" class="header-lk-block-login-button">Войти</a>
@@ -118,7 +135,9 @@
 				<a class="logout-link" href="<?php echo $this->createCPUUrl('/user/logout/');?>">Выйти</a>
 			<?php endif;?>
 		</div>
-		
+
+
+
 		<ul class="header-main-menu">
 			<?php foreach ($this->variables['mainMenuList'] AS $key => $val):?>
 				<li class="

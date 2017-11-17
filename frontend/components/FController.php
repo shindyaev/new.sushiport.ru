@@ -32,63 +32,82 @@ class FController extends EController
 			$this->variables['description'] = "";
 			
 			$seo = Yii::app()->urlManager->seo;
+
 			if (!empty($seo)) {
 				$this->variables['title'] = $seo->title;
 				$this->variables['headline'] = $seo->headline;
 				$this->variables['keywords'] = $seo->keywords;
 				$this->variables['description'] = $seo->description;
 			}
-			
-			$citys = City::model()->findAll();
-			$firstCity = $citys[0];
-			$citys = CHtml::listData($citys, 'id', 'name');
-			$this->variables['citys'] = $citys;
-			
-			$this->variables['firstVisit'] = true;
-			if (!empty(Yii::app()->request->cookies['firstVisit']))
-				$this->variables['firstVisit'] = false;
-			
-			
-			
-			Yii::app()->request->cookies['firstVisit'] = new CHttpCookie('firstVisit', '1', array('expire' => time() + (60*60*24)*360));
-			
-			
-// 			if (!empty(Yii::app()->request->cookies['city_id']))
-// 				$city_id = (int)Yii::app()->request->cookies['city_id']->value;
-			if (!empty($city_id)) {
-				$this->variables['city'] = $citys[$city_id];
-			} else {
-				$this->variables['city'] = $firstCity->name;
-				Yii::app()->request->cookies['city_id'] = new CHttpCookie('city_id', $firstCity->id, array('expire' => time() + (60*60*24)*360));
-				$city_id = $firstCity->id;
-			}
-			
-			$settings = new Settings();
-			if ($city_id == 1) {
-				$this->variables['phone'] = $settings->phoneSmr;
-			}
-			
-			if ($city_id == 2) {
-				$this->variables['phone'] = $settings->phoneUfa;
-			}
-			$this->variables['city-id'] = $city_id;
-			$this->variables['city-r'] = '';
-			if ($this->variables['city-id'] == 1) {
-				$this->variables['city-r'] = 'Самары';
-				$this->variables['city-d'] = 'Самаре';
-			}
-			if ($this->variables['city-id'] == 2) {
-				$this->variables['city-r'] = 'Уфы';
-				$this->variables['city-d'] = 'Уфе';
-			}
-			
-			
-			$this->variables['emailModel'] = new Email();
-			$this->variables['writeModel'] = new Write();
-			$this->variables['callMeModel'] = new CallMe();
-			$this->variables['androidLink'] = $settings->androidLink;
-			$this->variables['iphoneLink'] = $settings->iphoneLink;
-			$this->variables['restoransText'] = $settings->restoransText;
+
+
+				$citys = City::model()->findAll();
+				$firstCity = $citys[0];
+				$this->variables['citysFull'] = $citys;
+				$citys = CHtml::listData($citys, 'id', 'name');
+				$this->variables['citys'] = $citys;
+
+				$this->variables['firstVisit'] = true;
+				if (!empty(Yii::app()->request->cookies['firstVisit']))
+					$this->variables['firstVisit'] = false;
+
+				Yii::app()->request->cookies['firstVisit'] = new CHttpCookie('firstVisit', '1', array('expire' => time() + (60 * 60 * 24) * 360));
+
+				if (isset($_REQUEST['city'])) {
+					#$city = City::model()->findByAttributes('alias = :alias', ['alias' => $_REQUEST['city']]);
+					#$city = Yii::app()->db->createCommand('SELECT id, alias, phone, email, name, nameR, nameD FROM citys WHERE alias = "' . htmlspecialchars($_REQUEST['city'], ENT_QUOTES) . '";')->queryRow();
+
+					#$city = City::model()->findByPk(1);
+					$city = City::model()->find('alias = :alias', array(':alias' => $_REQUEST['city']));
+					$city_id = (int)$city->id;
+
+					$this->variables['city'] = $citys[$city_id];
+					$this->variables['phone'] = $city->phone;
+					$this->variables['city-id'] = (int)$city->id;
+					$this->variables['city-r'] = $city->nameR;
+					$this->variables['city-d'] = $city->nameD;
+					Yii::app()->request->cookies['city_id'] = new CHttpCookie('city_id', $city->id, array('expire' => time() + (60 * 60 * 24) * 360));
+					$settings = new Settings();
+
+
+				}
+				else {
+					if (!empty(Yii::app()->request->cookies['city_id']))
+						$city_id = (int)Yii::app()->request->cookies['city_id']->value;
+					if (!empty($city_id)) {
+						$this->variables['city'] = $citys[$city_id];
+					} else {
+						$this->variables['city'] = $firstCity->name;
+						Yii::app()->request->cookies['city_id'] = new CHttpCookie('city_id', $firstCity->id, array('expire' => time() + (60 * 60 * 24) * 360));
+						$city_id = $firstCity->id;
+					}
+
+					$settings = new Settings();
+					if ($city_id == 1) {
+						$this->variables['phone'] = $settings->phoneSmr;
+					}
+
+					if ($city_id == 2) {
+						$this->variables['phone'] = $settings->phoneUfa;
+					}
+					$this->variables['city-id'] = $city_id;
+					$this->variables['city-r'] = '';
+					if ($this->variables['city-id'] == 1) {
+						$this->variables['city-r'] = 'Самары';
+						$this->variables['city-d'] = 'Самаре';
+					}
+					if ($this->variables['city-id'] == 2) {
+						$this->variables['city-r'] = 'Уфы';
+						$this->variables['city-d'] = 'Уфе';
+					}
+				}
+			#die(var_dump($this->variables));
+				$this->variables['emailModel'] = new Email();
+				$this->variables['writeModel'] = new Write();
+				$this->variables['callMeModel'] = new CallMe();
+				$this->variables['androidLink'] = $settings->androidLink;
+				$this->variables['iphoneLink'] = $settings->iphoneLink;
+				$this->variables['restoransText'] = $settings->restoransText;
 			
 			
 

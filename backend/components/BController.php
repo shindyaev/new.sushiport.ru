@@ -31,6 +31,7 @@ class BController extends EController
 	const MOBILE_MENU_ITEM = 'mobile';
 	const CHANGE_MENU_TODAY = 'menuToday';
 	const RESTORANS_MENU_ITEM = 'restorans';
+	const CITY_MENU_ITEM = 'city';
 	const PROMO_MENU_ITEM = 'promo';
 
 	
@@ -52,8 +53,8 @@ class BController extends EController
 			$citys = CHtml::listData($citys, 'id', 'name');
 			$this->variables['citys'] = $citys;
 			
-// 			if (!empty(Yii::app()->request->cookies['city_id']))
-// 				$city_id = (int)Yii::app()->request->cookies['city_id']->value;
+ 			if (!empty(Yii::app()->request->cookies['city_id']))
+ 				$city_id = (int)Yii::app()->request->cookies['city_id']->value;
 			
 			if (!empty($city_id)) {
 				$this->variables['city'] = $citys[$city_id];

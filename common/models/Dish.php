@@ -49,8 +49,7 @@ class Dish extends EActiveRecord
 		// will receive user inputs.
 		return array(
 			array('pid, name, price, weight', 'required'),
-			array('root_cat, pid, price, ccal, weightType, recommended, visible, hit, hot, vegan, new, sort, cityId, rest', 'numerical', 'integerOnly'=>true),
-			//array('root_cat, pid, price, weight, ccal, weightType, recommended, visible, hit, hot, vegan, new, sort, cityId, rest', 'numerical', 'integerOnly'=>true),
+			array('root_cat, pid, price, weight, ccal, weightType, recommended, visible, hit, hot, vegan, new, sort, cityId, rest', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>100),
 			array('text', 'safe'),
 			// The following rule is used by search().

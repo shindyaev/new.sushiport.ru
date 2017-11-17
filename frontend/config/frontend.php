@@ -55,17 +55,17 @@ return array(
 
 			'rules' => array(
 			
-				'(smr|ufa)/<controller:cart>/' => '<controller>/index',
-				'(smr|ufa)/<controller:cart>/<action:(index|success)>' => '<controller>/<action>',
-			
+				'http://<city>.milimon.dev/<controller:cart>/' => '<controller>/index',
+				'http://<city>.milimon.dev/<controller:cart>/<action:(index|success)>' => '<controller>/<action>',
+
 				'<controller:user>/<action:registrationDone>/<hash:\w+>' => '<controller>/<action>',
 				'<controller:user>/<action:recoveryDone>/<hash:\w+>' => '<controller>/<action>',
-				
+
 				'<controller:menu>/<id:\d+>/<sort:\w+>' => '<controller>/index',
-				
+
 				array('menu/index', 'pattern'=>'sielbysam/', 'defaultParams'=>array('id'=>11)),
 				array('menu/index', 'pattern'=>'sielbysam/price/', 'defaultParams'=>array('id'=>11, 'sort'=>'price')),
-				
+
 				array('menu/index', 'pattern'=>'sielbysam/rolls/', 'defaultParams'=>array('id'=>11)),
 				array('menu/index', 'pattern'=>'sielbysam/rolls/sort/', 'defaultParams'=>array('id'=>11, 'sort'=>'sort')),
 				array('menu/index', 'pattern'=>'sielbysam/rolls/price/', 'defaultParams'=>array('id'=>11, 'sort'=>'price')),
@@ -113,11 +113,11 @@ return array(
 				array('menu/index', 'pattern'=>'sielbysam/sushi/', 'defaultParams'=>array('id'=>56)),
 				array('menu/index', 'pattern'=>'sielbysam/sushi/sort/', 'defaultParams'=>array('id'=>56, 'sort'=>'sort')),
 				array('menu/index', 'pattern'=>'sielbysam/sushi/price/', 'defaultParams'=>array('id'=>56, 'sort'=>'price')),
-				
+
 				array('menu/index', 'pattern'=>'sielbysam/grill/', 'defaultParams'=>array('id'=>58)),
 				array('menu/index', 'pattern'=>'sielbysam/grill/sort/', 'defaultParams'=>array('id'=>58, 'sort'=>'sort')),
 				array('menu/index', 'pattern'=>'sielbysam/grill/price/', 'defaultParams'=>array('id'=>58, 'sort'=>'price')),
-				
+
 				array('menu/index', 'pattern'=>'sielbysam/burgers/', 'defaultParams'=>array('id'=>59)),
 				array('menu/index', 'pattern'=>'sielbysam/burgers/sort/', 'defaultParams'=>array('id'=>59, 'sort'=>'sort')),
 				array('menu/index', 'pattern'=>'sielbysam/burgers/price/', 'defaultParams'=>array('id'=>59, 'sort'=>'price')),
@@ -234,20 +234,21 @@ return array(
 				array('menu/index', 'pattern'=>'cambridgecafe/napitki/', 'defaultParams'=>array('id'=>35)),
 				array('menu/index', 'pattern'=>'cambridgecafe/napitki/sort/', 'defaultParams'=>array('id'=>35, 'sort'=>'sort')),
 				array('menu/index', 'pattern'=>'cambridgecafe/napitki/price/', 'defaultParams'=>array('id'=>35, 'sort'=>'price')),
-				
+
 				array('menu/index', 'pattern'=>'cambridgecafe/garnirs/', 'defaultParams'=>array('id'=>60)),
 				array('menu/index', 'pattern'=>'cambridgecafe/garnirs/sort/', 'defaultParams'=>array('id'=>60, 'sort'=>'sort')),
 				array('menu/index', 'pattern'=>'cambridgecafe/garnirs/price/', 'defaultParams'=>array('id'=>60, 'sort'=>'price')),
 
 				'<controller:menu>/<id:\d+>' => '<controller>/index',
-				
+
 				'<controller:menu>/<action:index>/<id:\d+>/<sort:\w+>' => '<controller>/<action>',
 				'<controller:menu>/<action:index>/<id:\d+>' => '<controller>/<action>',
-				
+
 				// default rules
-				'<controller:\w+>/<id:\d+>' => '<controller>/index',
-				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+				'http://<city>.milimon.dev/<controller:\w+>/<id:\d+>' => '<controller>/index',
+				'http://<city>.milimon.dev/<controller:\w+>' => '<controller>/index',
+				'http://<city>.milimon.dev/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+				'http://<city>.milimon.dev/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 			),
 		),
 		'user' => array(

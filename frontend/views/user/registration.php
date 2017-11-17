@@ -69,9 +69,9 @@
 
 			<?php echo CHtml::htmlButton('Регистрация', array('class' => 'btn btn-default', 'type' => 'submit')); ?>
 			<a href="<?php echo $this->createCPUUrl('/user/recovery/');?>" class="pull-right mt-5">Забыли пароль?</a>
-			<div class="form-group">
-				<p style="padding-top: 10px;width: 315px;display: block;font-size: 11px;">
-					 Нажимая «Регистрация», я&nbsp;даю согласие на&nbsp;обработку моих персональных данных и&nbsp;получение рекламных предложений. С&nbsp;<a href="http://smr.milimon.ru/pages/33/" target="_blank">условиями обработки персональных данных и&nbsp;получения предложений</a> - ознакомлен и&nbsp;согласен.
+			<div class="form-group hidden">
+				<p style="padding-top: 10px;width: 315px;display: block;">
+					 Нажимая «Регистрация», я подтверждаю предачу персональных данных и авторизацию на сайте <a href="https://sailplay.ru/">www.sailplay.ru</a>
 				</p>
 			</div>
 

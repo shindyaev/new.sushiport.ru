@@ -50,7 +50,7 @@ return array(
 			'appLayout'=>'application.views.layouts.main', // Application layout.
 			'cssFile'=>'rights.css', // Style sheet file to use for Rights.
 			'install'=>false, // Whether to enable installer.
-			'debug'=>false,
+			'debug'=>true,
 		),
 	),
 
@@ -77,19 +77,19 @@ return array(
 			'rules' => array(
 				'<controller:(menu)>/<action:(section|dish)>/<pid:\d+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:(menu)>/<action:(section|dish)>/<pid:\d+>'=>'<controller>/<action>',
-				
+
 				'<controller:site>/<action:mainMenuItem>/<pid:\d+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:site>/<action:mainMenuItem>/<pid:\d+>'=>'<controller>/<action>',
-				
+
 				'<controller:news>/<action:item>/<pid:\d+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:news>/<action:item>/<pid:\d+>'=>'<controller>/<action>',
-			
+
 				// default rules
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
 				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-				
-				
+
+
 				'<module:\w+>/<controller:\w+>'=>'<module>/<controller>/index',
 				'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
 			),

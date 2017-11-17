@@ -53,8 +53,11 @@ class RestoransController extends RController
 		$menus = Menu::model()->findAll('pid = 0');
 		$menus = CHtml::listData($menus, 'id', 'name');
 
+		$cities = City::model()->findAll();
+		$cities = CHtml::listData($cities, 'id', 'name');
+
 		
-		$this->render('item', array('header' => $header, 'model' => $model, 'modelImage' => $modelImage, 'menus' => $menus));
+		$this->render('item', array('header' => $header, 'model' => $model, 'modelImage' => $modelImage, 'menus' => $menus, 'cities' => $cities));
 	}
 	
 	public function actionDelete($id) {

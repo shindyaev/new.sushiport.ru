@@ -162,6 +162,17 @@
 			</a>
 		</li>
 		<?php endif;?>
+
+
+		<?php if(Yii::app()->user->checkAccess('City.*')): ?>
+		<li class="start <?php if (!empty($this->menuActiveItems[BController::CITY_MENU_ITEM])) { echo 'active'; } ?>">
+			<a href="<?php echo $this->createUrl('city/index') ?>">
+				<i class="icon-sitemap"></i>
+				<span class="title">Города</span>
+				<span class="selected"></span>
+			</a>
+		</li>
+		<?php endif;?>
 		
 		<?php if(Yii::app()->user->checkAccess('Pages.*')): ?>
 		<li class="start <?php if (!empty($this->menuActiveItems[BController::PAGES_MENU_ITEM])) { echo 'active'; } ?>">

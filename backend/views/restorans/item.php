@@ -213,8 +213,14 @@ if (!empty($model->id) && file_exists($model->imagesPath.'admin_preview/'.$model
 				<span class="help-inline"><?php echo $form->error($model,'visible'); ?></span>
 			</div>
 		</div>
-		
 
+		<div class="control-group">
+			<?php echo $form->label($model,'cityId',array('class'=>'control-label')); ?>
+			<div class="controls">
+				<?php echo $form->dropDownList($model,'cityId',$cities, array('class'=>'m-wrap large')); ?>
+				<span class="help-inline"><?php echo $form->error($model,'cityId'); ?></span>
+			</div>
+		</div>
 		
 		<div class="form-actions large">
 			<?php echo CHtml::htmlButton('<i class="icon-ok"></i> Сохранить', array('class' => 'btn blue', 'type' => 'submit')); ?>

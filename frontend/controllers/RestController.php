@@ -2,11 +2,9 @@
 
 class RestController extends FController
 {
-	
-	public function actionIndex()
+	public function actionIndex($city)
 	{
-		
-		$restorans = Restoran::model()->findAll(['condition' => 'visible = 1', 'order' => 'sort']);
+		$restorans = Restoran::model()->findAll(['condition' => 'visible = 1 AND cityId = ' . (int)Yii::app()->request->cookies['city_id']->value, 'order' => 'sort']);
 
 		$model = MainMenu::model()->findByPk(65);
 
@@ -18,8 +16,8 @@ class RestController extends FController
 		$dishes = [];
 		foreach ($restorans AS $key => &$val) {
 			$tmp = Dish::model()->findAll([
-					'condition' => 'root_cat = :root_cat AND  visible = 1 AND recommended = 1',
-					'params' => [':root_cat' => $val->menu],
+					'condition' => 'root_cat = :root_cat AND  visible = 1 AND recommended = 1 AND cityId = :cityId',
+					'params' => [':root_cat' => $val->menu, ':cityId' => (int)Yii::app()->request->cookies['city_id']->value],
 					'order' => 'RAND()',
 					'limit' => 3
 			]);
