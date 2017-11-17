@@ -14,8 +14,8 @@
       <file leaf-file-name="frontend.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/config/frontend.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="252" column="45" lean-forward="false" selection-start-line="252" selection-start-column="45" selection-end-line="252" selection-end-column="45" />
+            <state relative-caret-position="408">
+              <caret line="255" column="44" lean-forward="false" selection-start-line="255" selection-start-column="44" selection-end-line="255" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -25,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/views/layouts/header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="86" column="93" lean-forward="false" selection-start-line="86" selection-start-column="93" selection-end-line="86" selection-end-column="93" />
+              <caret line="86" column="92" lean-forward="false" selection-start-line="86" selection-start-column="83" selection-end-line="86" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -39,8 +39,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/config/frontend.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/header.php" />
+        <option value="$PROJECT_DIR$/frontend/config/frontend.php" />
       </list>
     </option>
   </component>
@@ -180,12 +180,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510912491691</updated>
-      <workItem from="1510912492905" duration="303000" />
+      <workItem from="1510912492905" duration="352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303000" />
+    <option name="totallyTimeSpent" value="352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -210,6 +210,9 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -224,8 +227,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frontend/config/frontend.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="252" column="45" lean-forward="false" selection-start-line="252" selection-start-column="45" selection-end-line="252" selection-end-column="45" />
+        <state relative-caret-position="408">
+          <caret line="255" column="44" lean-forward="false" selection-start-line="255" selection-start-column="44" selection-end-line="255" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -233,7 +236,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="86" column="93" lean-forward="false" selection-start-line="86" selection-start-column="93" selection-end-line="86" selection-end-column="93" />
+          <caret line="86" column="92" lean-forward="false" selection-start-line="86" selection-start-column="83" selection-end-line="86" selection-end-column="92" />
           <folding />
         </state>
       </provider>
